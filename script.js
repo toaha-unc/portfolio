@@ -96,12 +96,10 @@ function initThreeJS() {
                 vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
                 vDistance = -mvPosition.z;
                 
-                // Add wave effect with shiny variations
                 vec3 pos = position;
                 pos.x += sin(time * 0.5 + position.y * 0.1) * 0.5;
                 pos.y += cos(time * 0.3 + position.x * 0.1) * 0.5;
                 
-                // Mouse interaction
                 float distance = length(position.xy - mousePosition * 10.0);
                 pos.z += sin(distance * 0.1 - time) * 2.0;
                 
@@ -122,21 +120,17 @@ function initThreeJS() {
                 vec2 center = gl_PointCoord - vec2(0.5);
                 float dist = length(center);
                 
-                // Shiny effect based on shininess attribute
                 float circle = 1.0 - smoothstep(0.0, 0.5, dist);
                 
-                // Add shiny highlights
                 float shiny = vShininess * 0.8;
                 float highlight = 1.0 - smoothstep(0.0, 0.2, dist);
                 highlight *= shiny;
                 
-                // Add sparkle effect for very shiny particles
                 if (vShininess > 0.8) {
                     float sparkle = sin(dist * 20.0) * 0.3 + 0.7;
                     highlight += sparkle * 0.5;
                 }
                 
-                // Combine base color with shiny highlights
                 vec3 finalColor = vColor + vec3(highlight * 0.5);
                 
                 gl_FragColor = vec4(finalColor, alpha * circle);
@@ -249,7 +243,7 @@ const sampleProjects = [
     {
         name: "Event Management System",
         description: "A full-featured event management system built with Django that allows users to create, manage, and attend events. Includes user authentication, event registration, and comprehensive event management capabilities.",
-        technologies: ["Python", "Django", "SQLite", "HTML/CSS", "Tailwind CSS"],
+        technologies: ["Python", "Django", "PostgreSQL", "HTML/CSS", "Tailwind CSS"],
         githubUrl: "https://github.com/toaha-unc/django-event-management-system",
         liveUrl: "https://django-event-management-system-60t0.onrender.com/",
         image: "images/EMS.png"
