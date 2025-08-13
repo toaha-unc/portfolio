@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toaha | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="gradient-bg-dark">
+
+    <div class="custom-cursor"></div>
+
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gradient"><a href="index.html">Toaha</a></div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-purple-600 hover:text-purple-600">Home</a>
+                    <a href="#about" class="nav-link text-purple-600 hover:text-purple-600">About</a>
+                    <a href="#projects" class="nav-link text-purple-600 hover:text-purple-600">Projects</a>
+                    <a href="#resume" class="nav-link text-purple-600 hover:text-purple-600">Resume</a>
+                    <a href="#contact" class="nav-link text-purple-600 hover:text-purple-600">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-effect">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block nav-link text-purple-600 hover:text-purple-600">Home</a>
+                <a href="#about" class="block nav-link text-purple-600 hover:text-purple-600">About</a>
+                <a href="#projects" class="block nav-link text-purple-600 hover:text-purple-600">Projects</a>
+                <a href="#resume" class="block nav-link text-purple-600 hover:text-purple-600">Resume</a>
+                <a href="#contact" class="block nav-link text-purple-600 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-32">
+        <div id="three-container" class="absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="floating mb-16">
+                    <img id="profile-pic" src="https://github.com/toaha-unc.png" 
+                         alt="Profile Picture" 
+                         class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg object-cover"
+                         loading="eager">
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Hi, I'm <span class="text-gradient">Toaha</span>
+                </h1>
+                <p id="bio-text" class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    A passionate developer creating amazing digital experiences
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center w-auto sm:w-auto">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="get-in-touch-btn border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 text-center w-auto sm:w-auto">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="absolute -bottom-4 left-0 right-0 z-20">
+            <div class="flex justify-center">
+                <a href="#about" class="scroll-down-btn">
+                    <div class="animate-bounce">
+                        <i class="fas fa-chevron-down text-3xl text-gray-400"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="about-section section-padding">
+        <div id="about-background" class="absolute inset-0"></div>
+        <div class="glow-overlay"></div>
+        <div class="growth-glow"></div>
+        <div class="milestone-glow"></div>
+        <div id="skill-logo-display" class="absolute inset-0 flex items-center justify-center pointer-events-none z-5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" id="about-title">
+                <h2 class="text-4xl font-bold text-white mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-2xl font-semibold text-white mb-6 text-center">My Journey</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-justify max-w-4xl mx-auto">
+                        I'm a full stack software developer and recent graduate of FastTrack'd. My tech stack is Spring and Angular. I was born in Bangladesh, became a US citizen, and lived in both countries. Now I've settled in the US full time. I was introduced to programming in high school, and I loved and enjoyed programming a lot. I loved solving complex programming problems, and after graduating from high school, I majored in theology. I later realized that I didn't want to pursue a career in theology, so I changed my major to computer science. I was able to continue my journey in programming and computer science. So, I did an internship at the Computer Science Experience labs. There, I worked on a project where we created a seat and room reservation system for students. We worked in a team and our tech stack was in angular and fast API. We did this project to make it easier for the students to book seats and reserve rooms, and so that they could collaborate and work on projects with each other. After graduating from college, I pursued a career as a Professor. I taught software engineering. I became a Professor because I remember my time in high school when I was introduced to programming. And that I didn't have any good instructor. So I taught software engineering there. So, I learned a lot throughout my whole journey of programming and software engineering. And I learned that my goal was to help people who are less fortunate, and my goal was to solve complex problems. I enjoy doing this.                     </p>                    
+                        <p class="text-gray-300 mb-12 leading-relaxed text-justify max-w-4xl mx-auto">
+                        I specialize in modern web technologies and enjoy working on projects that challenge me to think creatively 
+                        and push the boundaries of what's possible on the web.
+                    </p>
+                    
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-white mb-4 text-center">Frontend Technologies</h4>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Angular</span>
+                            <span class="skill-badge">TypeScript</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">HTML5</span>
+                            <span class="skill-badge">CSS3</span>
+                            <span class="skill-badge">TailwindCSS</span>
+                            <span class="skill-badge">ThreeJS</span>
+                            <span class="skill-badge">GSAP</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-white mb-4 text-center">Backend Technologies</h4>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Spring</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Django</span>
+                            <span class="skill-badge">Postman</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-white mb-4 text-center">Databases</h4>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">PostgreSQL</span>
+                            <span class="skill-badge">MySQL</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-white mb-4 text-center">DevOps & Tools</h4>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Jenkins</span>
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">Maven</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-white mb-4 text-center">Cloud Technologies</h4>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">AWS</span>
+                            <span class="skill-badge">Azure</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-white mb-4 text-center">Operating Systems</h4>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Windows</span>
+                            <span class="skill-badge">MacOS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="projects" class="projects-section section-padding">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="projects-title text-4xl md:text-5xl font-black mb-6">My Projects</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto" id="projects-grid">
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="resume" class="section-padding glass-effect-strong">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Resume</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="stats-card p-8 rounded-2xl text-center">
+                    <i class="fas fa-file-pdf text-6xl text-gradient mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Download My Resume</h3>
+                    <p class="text-gray-300 mb-6">
+                        Get a detailed overview of my experience, skills, and achievements
+                    </p>
+                    <a href="resume.pdf" download class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
+                        <p class="text-gray-300 mb-8">
+                            I'm always interested in new opportunities and exciting projects. 
+                            Feel free to reach out if you'd like to collaborate or just say hello!
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <a href="mailto:toahasiddique.ts@gmail.com" class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </a>
+                                <div>
+                                    <div class="font-semibold text-white">Email</div>
+                                    <a href="mailto:toahasiddique.ts@gmail.com" class="text-gray-300 hover:text-purple-400 transition-colors">toahasiddique.ts@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://github.com/toaha-unc" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                    <i class="fab fa-github text-white"></i>
+                                </a>
+                                <div>
+                                    <div class="font-semibold text-white">GitHub</div>
+                                    <a href="https://github.com/toaha-unc" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-purple-400 transition-colors">github.com/toaha-unc</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="https://www.linkedin.com/in/toahasiddique/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                    <i class="fab fa-linkedin text-white"></i>
+                                </a>
+                                <div>
+                                    <div class="font-semibold text-white">LinkedIn</div>
+                                    <a href="https://www.linkedin.com/in/toahasiddique/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-purple-400 transition-colors">linkedin.com/in/toahasiddique</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-white mb-2">Name</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-400">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-400">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-4 py-3 form-input rounded-lg text-white placeholder-gray-400"></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Toaha Siddique - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
