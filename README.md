@@ -1,124 +1,160 @@
-# JS Portfolio Assignment
+# Toaha Siddique - Portfolio Website
 
----
+A modern, interactive portfolio website built with vanilla JavaScript, Three.js, and GSAP animations. This project showcases my skills as a full-stack software developer through an engaging, interactive web experience.
 
-This assignment combines the interpersonal and technical lecture modules. This portfolio page will contain their biographies, stories (Maybe in a blog format), resumes, descriptions of the assignments and assessments they completed, any previous projects they built, and professional images of themselves. The students should develop their own user stories and design the portfolio site themselves. Each student will present their portfolio pages along with their stories and experiences through FastTrack'D to the class.
+## 🎯 What This Project Does
 
-## Goal
+This is a single-page portfolio website that demonstrates advanced frontend development techniques including:
 
----
+- **3D Interactive Background**: A dynamic particle system built with Three.js that responds to mouse movement
+- **Smooth Scroll Animations**: Professional-grade animations using GSAP with scroll triggers
+- **Interactive Elements**: Custom cursor, click effects, and animated skill badges
+- **Dynamic Content**: GitHub profile integration and functional contact form
+- **Responsive Design**: Fully responsive across all devices with mobile-first approach
 
-Students will create their own portfolio page/site and prepare a presentation in which they will cover their experiences at FastTrack'D, their story which they have developed throughout the course, and their technical abilities by using their portfolio sites to effectively guide and support their presentation. This will serve as a great resource for representing each student individually and their experience throughout the lecture modules of FastTrack'D.
+## 🚀 Live Demo
 
-## Required Content
+Visit the live portfolio: https://portfolio-ten-azure-37.vercel.app/
 
----
-- [ ] Resume present and available for download
-- [ ] Routing either between pages || single scrolling page (using anchors or a some type of navigation)
-- [ ] Work || Project section with project descriptions and links to Github
-- [ ] Working links to Github projects or deployed projects
-- [ ] About section. (Summary can be pulled from your TYS)
-- [ ] Contact section with form for visitors to send email
-- [ ] At least (1) CSS animation existing anywhere on the site
-- [ ] Github API specific data - Object structure below
-- [ ] ----------------------------
-- [ ] Profile picture present, pulled from Github via Github's API
-- [ ] Bio underneath profile picture, pulled from Github via Github's API
+## 🛠️ Technologies Used
 
+- **HTML5** - Semantic markup and structure
+- **CSS3** - Advanced styling with custom animations and gradients
+- **JavaScript (ES6+)** - Interactive functionality and DOM manipulation
+- **TailwindCSS** - Utility-first CSS framework for responsive design
+- **Three.js** - 3D graphics and particle system
+- **GSAP** - Professional animations and scroll triggers
+- **GitHub API** - Dynamic profile data fetching
+- **EmailJS** - Contact form functionality
 
-## Wireframe
+## 📁 Project Structure
 
-
-## Examples
-Below is a multi-page portfolio with both desktop and mobile views. The design is very minimal and relies on large areas of white-space.
-
-<!-- ![multi-page](https://user-images.githubusercontent.com/12191780/161307224-b29bf3e0-e2a6-41c6-bda3-fb90398929f8.png) -->
-
-![home-page](https://user-images.githubusercontent.com/12191780/161307236-e749eb6d-83af-4ea7-a680-8f49ff5395b9.png)
-
-The landing page for this site includes the about section as well as a download link for the resume and the profile picture.
-
-![work-page](https://user-images.githubusercontent.com/12191780/161307244-8285e756-3ead-4653-9579-5ea59800093d.png)
-
-Clicking the title of each project will take you to the GitHub repository for the respective project, but you could also include a GitHub icon that links to the project if you prefer.
-
-![contact-page](https://user-images.githubusercontent.com/12191780/161307252-3646cbb3-5a8e-4d3b-89eb-4ca840786cba.png)
-
-The contact page is very basic and just sends an email to the portfolio owner.
-
-
-Below is a single scrolling portfolio page with anchors in the navbar leading to different sections on the same page. Click on the image to explore the portfolio's wireframe in Figma.
-
-<a href="https://www.figma.com/proto/vE1T72gLqju5ITQ2jlSzfL/Portfolio-Wireframe?node-id=14%3A10&starting-point-node-id=14%3A10">
-<img width="1438" alt="Screen Shot 2022-03-29 at 4 24 34 PM" src="https://user-images.githubusercontent.com/32781877/160709821-1b2593c1-52e9-408d-9830-6a5a305e1791.png">
-</a>
-
-
-Below is a wireframe (also known as a page schematic or screen blueprint) with sidebar navigation and a more grid layout for representing the user flow. Click on the "play" button at the top right within the Figma in order to explore the flow of the site.
-
-![wireframe-image](https://i.imgur.com/gN9wI5M.png)
-
-
-https://www.figma.com/file/VvzrwlF8oLbjqKXLh0w9Tj/Wireframes-for-Portfolios?node-id=0%3A1https://www.figma.com/file/VvzrwlF8oLbjqKXLh0w9Tj/Wireframes-for-Portfolios?node-id=0%3A1
-
-## The example object will be returned from Github's API
-###  https://api.github.com/users/chris-purnell 
----
-
-```json
-{
-   "login":"chris-purnell",
-   "id":74918205,
-   "node_id":"MDQ6VXNlcjc0OTE4MjA1",
-   "avatar_url":"https://avatars.githubusercontent.com/u/74918205?v=4",
-   "gravatar_id":"",
-   "url":"https://api.github.com/users/chris-purnell",
-   "html_url":"https://github.com/chris-purnell",
-   "followers_url":"https://api.github.com/users/chris-purnell/followers",
-   "following_url":"https://api.github.com/users/chris-purnell/following{/other_user}",
-   "gists_url":"https://api.github.com/users/chris-purnell/gists{/gist_id}",
-   "starred_url":"https://api.github.com/users/chris-purnell/starred{/owner}{/repo}",
-   "subscriptions_url":"https://api.github.com/users/chris-purnell/subscriptions",
-   "organizations_url":"https://api.github.com/users/chris-purnell/orgs",
-   "repos_url":"https://api.github.com/users/chris-purnell/repos",
-   "events_url":"https://api.github.com/users/chris-purnell/events{/privacy}",
-   "received_events_url":"https://api.github.com/users/chris-purnell/received_events",
-   "type":"User",
-   "site_admin":false,
-   "name":"Christopher Purnell",
-   "company":null,
-   "blog":"",
-   "location":"Memphis, TN",
-   "email":null,
-   "hireable":null,
-   "bio":"A wizard coder who casts powerful spells... but also wrong spells.",
-   "twitter_username":null,
-   "public_repos":7,
-   "public_gists":2,
-   "followers":0,
-   "following":1,
-   "created_at":"2020-11-23T14:49:26Z",
-   "updated_at":"2021-11-10T21:38:56Z",
-   "private_gists":1,
-   "total_private_repos":7,
-   "owned_private_repos":7,
-   "disk_usage":18632,
-   "collaborators":0,
-   "two_factor_authentication":false,
-   "plan":{
-      "name":"free",
-      "space":976562499,
-      "collaborators":0,
-      "private_repos":10000
-   }
-}
+```
+portfolio-main/
+├── index.html          # Main HTML file with semantic structure
+├── styles.css          # Custom CSS with animations and effects
+├── script.js           # JavaScript functionality (1117 lines)
+├── _config.yml         # Jekyll configuration for GitHub Pages
+├── README.md           # Project documentation
+├── resume.pdf          # Downloadable resume
+└── images/             # Project images
 ```
 
-### The current values are to be pulled from the above response and injected into your portfolio.
+## 🚀 How to Run This Project
 
-```json
-{
-    "avatar_url": "https://avatars.githubusercontent.com/u/74918205?v=4",
-    "bio": "A wizard coder who casts powerful spells... but also wrong spells.",
-}
-```
+### Prerequisites
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- No additional software required
+
+### Quick Start
+
+1. **Download or Clone**
+   ```bash
+   git clone https://github.com/toaha-unc/portfolio-main.git
+   cd portfolio-main
+   ```
+
+2. **Open in Browser**
+   - Simply double-click `index.html` to open in your default browser
+   - Or drag `index.html` into any modern web browser
+
+3. **Alternative: Local Server** (for development)
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   # Then visit http://localhost:8000
+   
+   # Using Node.js
+   npx serve .
+   # Then visit the URL shown in terminal
+   ```
+
+## 🎨 Key Features
+
+### Interactive 3D Background
+- 3,800 particles (1,500 on mobile) with dynamic movement
+- Mouse-responsive particle system
+- Performance optimized with reduced motion support
+
+### Smooth Animations
+- GSAP-powered scroll animations
+- Floating profile picture with physics
+- Staggered skill badge animations
+- Project card hover effects
+
+### Dynamic Content
+- GitHub profile integration (avatar, bio, stats)
+- Working contact form with EmailJS
+- Responsive navigation with mobile menu
+
+### Visual Effects
+- Custom animated cursor
+- Black hole click effects
+- Galaxy spark animations
+- Glass morphism design elements
+
+## 📱 Browser Compatibility
+
+- ✅ Chrome (recommended)
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🔧 Technical Implementation
+
+### Three.js Particle System
+- Custom shader materials for particle effects
+- Mouse interaction with particle movement
+- Performance optimization for mobile devices
+
+### GSAP Animations
+- Scroll-triggered animations
+- Staggered element reveals
+- Smooth parallax effects
+
+### Responsive Design
+- Mobile-first approach
+- Touch-friendly interactions
+- Optimized particle count for mobile
+
+## 🎯 Performance Features
+
+- **Lazy Loading**: Images load only when needed
+- **Reduced Motion**: Respects user's motion preferences
+- **Optimized Animations**: Efficient GSAP animations
+- **Mobile Optimization**: Reduced particle count on mobile devices
+
+## 📊 Project Statistics
+
+- **Lines of Code**: 1,117 lines of JavaScript
+- **CSS Rules**: 1,418 lines of custom styling
+- **Dependencies**: 0 (all libraries loaded via CDN)
+- **File Size**: Optimized for fast loading
+
+## 🔒 Privacy & Security
+
+- No tracking scripts or analytics
+- Contact form data handled securely through EmailJS
+- GitHub API calls are public and don't require authentication
+- No cookies or local storage used
+
+## 📞 Contact
+
+- **Email**: toahasiddique.ts@gmail.com
+- **GitHub**: [toaha-unc](https://github.com/toaha-unc)
+- **LinkedIn**: [toahasiddique](https://www.linkedin.com/in/toahasiddique/)
+
+## 🙏 Acknowledgments
+
+- **Three.js** for 3D graphics capabilities
+- **GSAP** for professional animations
+- **TailwindCSS** for utility classes
+- **Font Awesome** for icons
+- **Google Fonts** for typography
+
+---
+
+**Built with ❤️ by Toaha Siddique**
+
+*Last updated: August 2025*
